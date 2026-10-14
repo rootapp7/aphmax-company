@@ -1,0 +1,23 @@
+{
+  "name": "aphmax-company",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aphmax Company Ltd. website with Express and SQLite enquiry storage",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "express-rate-limit": "^7.5.0",
+    "better-sqlite3": "^12.4.1"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

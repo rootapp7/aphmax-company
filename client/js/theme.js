@@ -1,0 +1,1 @@
+/* Theme toggle is implemented in main.js to preserve the original UI behavior. */

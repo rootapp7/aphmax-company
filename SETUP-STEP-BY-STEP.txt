@@ -1,0 +1,98 @@
+APHMAX COMPANY WEBSITE — MANUAL SETUP (WINDOWS)
+Single-page edition: navigation links scroll to sections in index.html.
+=================================================
+
+IMPORTANT
+---------
+Run each command in Command Prompt (CMD), not by double-clicking a file.
+Do not type the prompt path such as C:\Users\...> — type only the command.
+
+STEP 1 — OPEN CMD IN THIS FOLDER
+--------------------------------
+1. Extract this ZIP.
+2. Open the extracted "aphmax-company" folder in File Explorer.
+3. Click the address bar at the top of the window.
+4. Type: cmd
+5. Press Enter.
+A black Command Prompt window should open at this project's folder.
+
+STEP 2 — CHECK NODE.JS AND NPM
+------------------------------
+Type this command and press Enter:
+
+node -v
+
+Then type:
+
+npm -v
+
+You should see version numbers. If either command says it is not recognized,
+install the current Node.js LTS version from https://nodejs.org/ and reopen CMD.
+
+STEP 3 — INSTALL THE WEBSITE PACKAGES
+-------------------------------------
+Type this command and press Enter:
+
+npm install
+
+Wait until it finishes. The first installation may take several minutes.
+If it shows an error, keep the window open and save or screenshot the full error.
+
+STEP 4 — CHECK THAT PACKAGES ARE INSTALLED
+------------------------------------------
+Type:
+
+npm ls --depth=0
+
+If packages are missing or an error is shown, do not continue yet. Save or
+screenshot the output so the problem can be diagnosed.
+
+STEP 5 — CREATE THE LOCAL CONFIGURATION FILE
+--------------------------------------------
+If the folder contains ".env.example" but does not contain ".env", run:
+
+copy .env.example .env
+
+If the command says the file already exists or cannot find the source file,
+read the message and do not repeatedly run the command.
+
+STEP 6 — START THE WEBSITE
+--------------------------
+Type:
+
+npm start
+
+Keep this Command Prompt window open while using the website. The server runs
+inside this window, so closing it will stop the website.
+
+STEP 7 — OPEN THE WEBSITE
+-------------------------
+Open a browser and visit:
+
+http://localhost:3000
+
+If the page does not open, return to CMD and read the error shown there.
+
+STOPPING THE WEBSITE
+--------------------
+When you want to stop the local website, click inside the CMD window and press:
+
+Ctrl+C
+
+If asked to terminate the batch job, type Y and press Enter.
+
+TROUBLESHOOTING — WHAT TO SEND FOR HELP
+---------------------------------------
+If any step fails:
+1. Do not close the CMD window.
+2. Take a screenshot showing the command and the full error.
+3. Tell the helper which step number failed.
+4. Never share passwords, secret API keys, or private credentials.
+
+NOTES
+-----
+- Commands must be run from the "aphmax-company" project folder.
+- Run one command at a time and wait for its result.
+- Do not type the ">" character shown in example command prompts.
+- This guide assumes the project includes package.json and an "npm start"
+  script. If npm reports that a script is missing, share the exact output.

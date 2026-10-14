@@ -1,0 +1,4 @@
+/* Shared page shell. The original layout selectors remain in global.css in their original order. */
+.page-main { min-height: 60vh; }
+.page-intro { padding-block: 34px 0; }
+.page-intro .wrap { padding-top: 18px; }

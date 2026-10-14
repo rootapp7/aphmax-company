@@ -1,0 +1,17 @@
+const path = require('path');
+const express = require('express');
+const helmet = require('helmet');
+const enquiryRoutes = require('./routes/enquiries.routes');
+const errorHandler = require('./middleware/error-handler');
+const app = express();
+const clientRoot = path.join(__dirname, '..', 'client');
+app.disable('x-powered-by');
+app.use(helmet({ contentSecurityPolicy: false }));
+app.use(express.json({ limit: '20kb' }));
+app.use('/api/enquiries', enquiryRoutes);
+app.use(express.static(clientRoot, { extensions: ['html'], maxAge: process.env.NODE_ENV === 'production' ? '1h' : 0 }));
+app.get('/', (req, res) => res.sendFile(path.join(clientRoot, 'pages', 'index.html')));
+app.get('/health', (req, res) => res.json({ status: 'ok' }));
+app.use((req, res) => res.status(404).sendFile(path.join(clientRoot, 'pages', '404.html')));
+app.use(errorHandler);
+module.exports = app;
