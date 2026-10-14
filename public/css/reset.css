@@ -1,0 +1,6 @@
+/* Small, predictable baseline. The original website's styling is preserved in global.css. */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; }
+img, svg, canvas { max-width: 100%; }
+[hidden] { display: none !important; }
